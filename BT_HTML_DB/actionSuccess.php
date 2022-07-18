@@ -20,16 +20,16 @@
             // trim(id) do khi ghép chuỗi nó dư khoảng cách
             $id = trim($id, " ");
         }
-        if (isset($_POST["title"])) {
+        if (isset($_POST["title"]) && !empty($_POST["title"]) && $_POST["title"] != "") {
             $title = $_REQUEST['title'];
         }
-        if (isset($_POST["date_add"])) {
+        if (isset($_POST["date_add"]) && !empty($_POST["date_add"])) {
             $date_add = $_REQUEST['date_add'];
         }
-        if (isset($_POST["description"])) {
+        if (isset($_POST["description"]) && !empty($_POST["description"])) {
             $description = $_REQUEST['description'];
         }
-        if (isset($_POST["content"])) {
+        if (isset($_POST["content"]) && !empty($_POST["content"])) {
             $content = $_REQUEST['content'];
         }
 

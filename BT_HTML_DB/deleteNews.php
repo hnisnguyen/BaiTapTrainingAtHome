@@ -27,9 +27,11 @@ if ($_GET['id']) {
         </form>
         <div>
             <h4>Or</h4>
-            <a href="listNews.php"><input class="button-8" type="button" value="Back to list"></a>
+            <!-- <a href="listNews.php"><input class="button-8" type="button" value="Back to list"></a> -->
         </div>
     </div>
 </body>
 
 </html>
+
+<?php include "actionSuccess.php"; ?>
