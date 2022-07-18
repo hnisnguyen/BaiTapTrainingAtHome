@@ -1,6 +1,6 @@
 <?php
-require "info.php" ?>
-<?php
+require "info.php";
+ 
 if ($_GET['id']) {
     $id = $_REQUEST['id'];
 }
@@ -22,13 +22,13 @@ foreach ($data as $key => $value) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit news</title>
-    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div  class="container">
-        <form action="editSuccess.php" method="post">
+        <form action="actionSuccess.php" method="post">
             <h3>Update news</h3>
             <div class="form-group">
                 <input type="hidden" id="id" name="id" value=' <?php echo $id ?> ' />
