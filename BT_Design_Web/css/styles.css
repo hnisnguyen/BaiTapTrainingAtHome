@@ -1,0 +1,111 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS cho phần tag body */
+body {
+    /* set font */
+    font-family: serif;
+
+    /* set background color */
+    background-color: aliceblue;
+
+    /* set padding (phần giữa nội dung và border của nó) */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* CSS cho phần tag header */
+header {
+    /* set độ rộng của header */
+    width: 100%;
+
+    /* set các thành phần nằm ngang */
+    display: inline-block;
+
+    /* set margin (phần bên ngoài border của nó) */
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* CSS cho tag img trong tag header */
+header img {
+
+    /* để hình ảnh nằm giữa màn hình */
+    display: block;
+    margin: auto;
+
+    /* điều chỉnh size hình ảnh */
+    width: 10em;
+    height: 5em;
+}
+
+/* CSS cho tag p trong tag header */
+header p {
+    /* canh giữa chữ */
+    text-align: center;
+
+    /* set kiểu font */
+    font-style: italic;
+
+    /* set màu chữ */
+    color: grey;
+
+    /* kích cỡ chữ */
+    font-size: 1em;
+}
+
+/* CSS cho tag nav */
+nav {
+    /* set kiểu border */
+    border-top: 0.1em solid black;
+    border-bottom: 0.2em double black;
+    margin: 10px;
+    text-align: right;
+}
+
+/* CSS cho tag ul trong tag nav */
+nav > ul {
+    display: flex;
+    list-style: none;
+}
+
+/* CSS cho tag li trong tag ul trong tag nav */
+nav ul li {
+    text-transform: uppercase;
+    text-align: center;
+
+    /* Chia đều độ rộng khung li trong nav */
+    flex-grow: 1; 
+}
+
+/* CSS cho tag a trong tag nav */
+nav a {
+    color: black;
+    font-weight: lighter;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* CSS cho tag a trong tag nav khi để chuột vào */
+nav a:hover {
+    color: white;
+    background-color: lightcoral;
+}
+
+/* CSS cho tag p trong tag footer */
+footer p {
+    text-align: center;
+    margin-top: 100%;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    padding: 1em;
+}
+
+/* add red color to footer heart icon */
+footer > p .icon {
+    color: red;
+}
