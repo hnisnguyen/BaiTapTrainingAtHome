@@ -29,44 +29,48 @@ if (isset($_GET['id'])) {
         <title>Edit news</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
+
     </head>
 
     <body>
-        <div class="container">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?id=$id"; ?>" method="post">
+    <?php include "../../BT_Design_Web/layout/header.php" ?>
+    <?php include "../../BT_Design_Web/layout/menu.php" ?>
+    <div class="container">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id=$id"; ?>" method="post">
 
-                <h3>Update news</h3>
-                <div class="form-group">
-                    <input type="hidden" id="id" name="id" value=' <?php echo $id ?> ' />
-                </div>
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" value='<?php echo $title ?>' />
-                    <span class="error">* <?php echo $titleErr; ?></span><br />
-                </div>
-                <div class="form-group">
-                    <label for="date_add">Date</label>
-                    <input type="date" name="date_add" id="date_add" value='<?php echo $date_add ?>' />
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="4" cols="50" placeholder="Enter text here ..."><?php echo $description ?></textarea>
-                    <span class="error">* <?php echo $descriptionErr; ?></span>
-                </div>
-                <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea name="content" id="content" rows="4" cols="50" placeholder="Enter text here ..."><?php echo $content ?></textarea>
-                    <span class="error">* <?php echo $contentErr; ?></span>
-                </div>
-                <div class="form-group">
-                    <input class="button-8" type="submit" id="submitbtn" name="submitbtn" value="Update" />
-                    <input class="button-8" type="reset" id="resetbtn" name="resetbtn" value="Reset" />
-                </div>
-            </form>
-            <a href="listNews.php"><input class="button-8" type="button" value="Back to list" /></a>
-        </div>
-
+            <h3>Update news</h3>
+            <div class="form-group">
+                <input type="hidden" id="id" name="id" value=' <?php echo $id ?> '/>
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label><br/>
+                <input type="text" id="title" name="title" value='<?php echo $title ?>'/>
+                <span class="error">* <?php echo $titleErr; ?></span><br/>
+            </div>
+            <div class="form-group">
+                <label for="date_add">Date</label><br/>
+                <input type="date" name="date_add" id="date_add" value='<?php echo $date_add ?>'/>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label><br/>
+                <textarea name="description" id="description" rows="4" cols="50"
+                          placeholder="Enter text here ..."><?php echo $description ?></textarea>
+                <span class="error">* <?php echo $descriptionErr; ?></span>
+            </div>
+            <div class="form-group"><br/><br/>
+                <label for="content">Content</label><br/>
+                <textarea name="content" id="content" rows="4" cols="50"
+                          placeholder="Enter text here ..."><?php echo $content ?></textarea>
+                <span class="error">* <?php echo $contentErr; ?></span>
+            </div>
+            <div class="form-group">
+                <input class="button-8" type="submit" id="submitbtn" name="submitbtn" value="Update"/>
+                <input class="button-8" type="reset" id="resetbtn" name="resetbtn" value="Reset"/>
+            </div>
+        </form>
+        <a href="listNews.php"><input class="button-8" type="button" value="Back to list"/></a>
+    </div>
+    <?php include "../../BT_Design_Web/layout/footer.php"?>
     </body>
 
     </html>

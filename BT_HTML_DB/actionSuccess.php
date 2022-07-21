@@ -12,7 +12,23 @@
 </head>
 
 <body>
+    <?php include "../../BT_Design_Web/layout/header.php" ?>
+    <?php include "../../BT_Design_Web/layout/menu.php" ?>
     <?php
+
+    // if (isset($_POST['id'])) {
+    //     $id = $_POST['id'];
+    //     if (basename($_SERVER["HTTP_REFERER"]) == "listNews.php?id=$id") {
+    //         //Code xử lý, xóa dữ liệu của table
+    //         $sql = "DELETE FROM tintuc WHERE id=$id";
+    //         if ($connect->query($sql) === TRUE) {
+    //             header("Location: listNews.php");
+    //         } else {
+    //             echo "Error: " . $sql . "<br>" . $connect->error;
+    //         }
+    //     }
+    // }
+
     //Lấy giá trị POST từ form vừa submit
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["id"])) {
@@ -49,53 +65,48 @@
                 SET title='$title', date_add='$date_add', description='$description', content='$content'
                 WHERE id=$id";
             }
-
-            //Code xử lý, xóa dữ liệu của table
-            if (basename($_SERVER["HTTP_REFERER"]) == "deleteNews.php?id=$id") {
+            if (basename($_SERVER["HTTP_REFERER"]) == "listNews.php?id=$id") {
+                //Code xử lý, xóa dữ liệu của table
                 $sql = "DELETE FROM tintuc WHERE id=$id";
             }
         }
         if ($connect->query($sql) === TRUE) {
-            if (empty($title) && empty($description) && empty($date_add) && empty($content)){ 
-    ?>
-            <div class="container">
-                <div>
-                    <h3>Successful !!!</h3>
-                </div>
-            </div>
-            <?php } else { ?>
+            if (empty($title) && empty($description) && empty($date_add) && empty($content)) {
+                header("Location: listNews.php");
+            } else { ?>
                 <div class="container">
                     <div>
                         <h3>Successful !!!</h3>
                     </div>
+                    <div>
+                        <h3><u>News Information:</u></h3>
                         <div>
-                            <h3><u>News Information:</u></h3>
                             <div>
-                                <div>
-                                    <b><i>Title: </i></b><i><?php echo $title; ?></i>
-                                </div>
-                                <div>
-                                    <b><i>Date: </i></b><i><?php echo $date_add; ?></i>
-                                </div>
-                                <div>
-                                    <b><i>Description: </i></b><i><?php echo $description; ?></i>
-                                </div>
-                                <div>
-                                    <b><i>Content: </i></b><i><?php echo $content; ?></i>
-                                </div>
+                                <b><i>Title: </i></b><i><?php echo $title; ?></i>
+                            </div>
+                            <div>
+                                <b><i>Date: </i></b><i><?php echo $date_add; ?></i>
+                            </div>
+                            <div>
+                                <b><i>Description: </i></b><i><?php echo $description; ?></i>
+                            </div>
+                            <div>
+                                <b><i>Content: </i></b><i><?php echo $content; ?></i>
                             </div>
                         </div>
+                    </div>
                 </div>
-        <?php } 
+                <a href="listNews.php"><input class="button-8" type="button" value="Back to list"></a>
+    <?php }
         } else {
-                echo "Error: " . $sql . "<br>" . $connect->error;
-            }
+            echo "Error: " . $sql . "<br>" . $connect->error;
+        }
     }
     //Đóng database
-    $connect->close(); ?>
+    $connect->close();
+    ?>
+    <?php include "../../BT_Design_Web/layout/footer.php" ?>
 
-
-
-    <a href="listNews.php"><input class="button-8" type="button" value="Back to list"></a>
 </body>
+
 </html>

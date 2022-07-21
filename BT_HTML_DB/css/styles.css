@@ -128,3 +128,7 @@ label {
 span .errorMessage {
   color: red;
 }
+
+a.deleteicon {
+  color: red;
+}
