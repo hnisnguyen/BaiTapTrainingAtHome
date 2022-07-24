@@ -14,21 +14,9 @@ function connectdb(){
     return $connect;
 }
 
+// Ngắt kết nối database
 function disconnectdb($connect) {
     $connect -> close();
 }
 
-function displayList($table) {
-    $connect = connectdb();
-    $sql = "SELECT * FROM $table";
-    $result = $connect->query($sql);
-    if ($result) {
-        $numRows = $result->num_rows;
-        $connect->close();
-    } else {
-        echo "Error: " . $sql . "<br>" . $connect->error;
-        $connect->close();
-    }
-    return $result;
-}
 

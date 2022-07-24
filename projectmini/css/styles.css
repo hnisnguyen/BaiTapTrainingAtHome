@@ -1,134 +1,424 @@
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS cho phần tag body */
 body {
-    background-color: antiquewhite;
-  }
+  /* set font */
+  font-family: serif;
+
+  /* set background color */
+  background-color: aliceblue;
+
+  /* set padding (phần giữa nội dung và border của nó) */
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 100%;
+}
+
+/* CSS cho phần tag header */
+header {
+  /* set độ rộng của header */
+  width: 100%;
+
+  /* set các thành phần nằm ngang */
+  display: inline-block;
+
+  /* set margin (phần bên ngoài border của nó) */
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+}
+
+/* CSS cho tag img trong tag header */
+header img {
   
-  .container {
-    width: 100%;
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
-    margin: 0 auto;
-  }
+  /* để hình ảnh nằm giữa màn hình */
+  display: block;
+  margin: auto;
   
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-align: center;
-  }
+  /* điều chỉnh size hình ảnh */
+  width: 10em;
+  height: 5em;
   
-  table {
-    border-collapse: collapse;
-    margin: 0.5rem;
-    width: 80%;
-  }
+  /* animation: myHeader 10s linear 0s infinite alternate; */
+}
+
+/* CSS cho tag p trong tag header */
+header p {
+  /* canh giữa chữ */
+  text-align: center;
   
-  table,
-  th,
-  td {
-    border: 0.1em solid #000;
-    padding: 10px;
-    margin: 10px;
-  }
+  /* set kiểu font */
+  font-style: italic;
   
-  th {
-    background-color: #4904b1;
-    text-align: center;
-    color: aliceblue;
-    font-size: 18px;
-  }
-  td {
-    font-size: 16px;
-  }
+  /* set màu chữ */
+  color: grey;
   
-  tr:nth-child(even) {
-    background-color: #c8eaf9;
-  }
+  /* kích cỡ chữ */
+  font-size: 1em;
   
-  tr:nth-child(odd) {
-    background-color: white;
-  }
+}
+
+/* CSS cho tag nav */
+nav {
+  /* set kiểu border */
+  border-top: 0.1em solid black;
+  border-bottom: 0.2em double black;
+  margin: 10px;
+  text-align: right;
+}
+
+/* CSS cho tag ul trong tag nav */
+nav > ul {
+  display: flex;
+  list-style: none;
+}
+
+/* CSS cho tag li trong tag ul trong tag nav */
+nav ul li {
+  text-transform: uppercase;
+  text-align: center;
+
+  /* Chia đều độ rộng khung li trong nav */
+  flex-grow: 1;
+}
+
+/* CSS cho tag a trong tag nav */
+nav a {
+  color: black;
+  font-weight: lighter;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* CSS cho tag a trong tag nav khi để chuột vào */
+nav a:hover {
+  color: white;
+  background-color: lightcoral;
+}
+
+/* CSS cho tag p trong tag footer */
+
+footer p {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+  padding: 1em;
+}
+
+/* add red color to footer heart icon */
+footer > p .icon {
+  color: red;
+}
+
+/* CSS cho div class container */
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin: 0 auto;
+}
+
+.container .head {
+  text-align: center;
+}
+
+.container .head a{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* set center cho các h */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+/* set list table vào giữa */
+div.table {
+  display: inline-block;
+  width: 100%;
+}
+
+div.table table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* design table */
+table {
+  border-collapse: collapse;
+  margin: 0.5rem;
+  width: 80%;
   
-  a.icon-block {
-    display: inline-block;
-    width: 10em;
-    text-align: center;
-  }
+}
+
+table,
+th,
+td {
+  border: 0.1em solid #000;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* CSS cho phần tiêu đề bảng */
+th {
+  background-color: #6b45a4;
+  text-align: center;
+  color: rgb(45, 31, 31);
+  color: #c8eaf9;
+  font-size: 18px;
+
+  /* animation: myThead 30s linear 0s infinite alternate; */
+}
+/* ô edit xanh lá */
+th.th-edit {
+  background-color: #06D85F !important;
+  color: black !important;
+}
+/* ô delete đỏ */
+th.th-delete {
+  background-color: #fd3b43 !important;
+  color: black !important;
+}
+/* cỡ chữ cho dòng */
+td {
+  font-size: 16px;
+}
+/* màu bảng dòng chẵn */
+tr:nth-child(even) {
+  background-color: #c8eaf9;
+}
+/* màu bảng dòng lẻ */
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+a.icon-block {
+  display: inline-block;
+  width: 10em;
+  text-align: center;
+}
+
+a.icon-block i,
+a.icon-block span {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+/* cho các icon nằm giữa ô */
+.icon-td {
+  text-align: center;
+}
+
+/* CSS button styles */
+/* button 8 */
+.button-8 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+  sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+/* button 33 */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* button 16 */
+.button-16 {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.button-16:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.button-16:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+/* end button */
+
+/* CSS for Form */
+fieldset {
+  padding: 10px;
+  border: none;
   
-  a.icon-block i,
-  a.icon-block span {
-    display: block;
-    width: 100%;
-    clear: both;
-  }
+  margin-right: auto;
+  margin-left: auto;
+  max-height: 400px;
+}
+
+fieldset h3 {
+  font-size: 30px;
+  /* background-color: #224abe; */
+  color: rgb(0, 48, 119);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+div.form-group {
+  margin-bottom: 5px;
+  /* background-color: #a0c7e4; */
+  max-height: auto;
   
-  .icontd {
-    text-align: center;
-  }
-  
-  .icontd :hover {
-    color: #224abe;
-    text-decoration: underline;
-  }
-  
-  /* CSS */
-  .button-8 {
-    background-color: #e1ecf4;
-    border-radius: 3px;
-    border: 1px solid #7aa7c7;
-    box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
-    box-sizing: border-box;
-    color: #39739d;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
-      sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.15385;
-    margin: 0;
-    outline: none;
-    padding: 8px 0.8em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  
-  .button-8:hover,
-  .button-8:focus {
-    background-color: #b3d3ea;
-    color: #2c5777;
-  }
-  
-  .button-8:focus {
-    box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
-  }
-  
-  .button-8:active {
-    background-color: #a0c7e4;
-    box-shadow: none;
-    color: #2c5777;
-  }
-  
-  label {
-    text-align: left;
-    margin-top: 30px;
-  }
-  
-  .error {
-    color: red;
-  }
-  
-  span .errorMessage {
-    color: red;
-  }
-  
-  a.deleteicon {
-    color: red;
-  }
+}
+/* Tiêu đề cho từng form */
+div.form-group label {
+  display: block;
+  text-align: left;
+  color: #224abe;
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+/* Kích cỡ chữ trong input */
+div.form-group input {
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 10px;
+}
+/* Kích cỡ chữ trong input */
+div.form-group textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 16px;
+  padding: 10px 10px;
+}
+
+.reset-btn {
+  color: red !important;
+}
+
+.reset-btn:hover {
+  background-color: aquamarine;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #06D85F;
+}
+
+i.delete-icon {
+  color: rgb(245, 87, 87);
+}
+
+i.delete-icon:hover,
+i.delete-icon:focus {
+  color: rgb(255, 0, 0);
+}
+
+i.edit-icon {
+  color: #224abe;
+}
+
+i.edit-icon:hover,
+i.edit-icon:focus {
+  color: #06D85F;
+}
+
+/* Làm hiệu ứng chơi */
+@keyframes myHeader {
+  /* from{opacity: 1;}
+  to{opacity: 0.2;} */
+
+  from {margin-left: 0%;}
+  to {margin-left: 90%;}
+}
+
+@keyframes myThead {
+  0%{background-color: rgb(253, 113, 113);}
+  20%{background-color: rgb(255, 255, 99);}
+  40%{background-color: rgb(255, 201, 100);}
+  60%{background-color: rgb(106, 255, 106);}
+  80%{background-color: rgb(111, 111, 255);}
+  100%{background-color: rgb(255, 114, 255);}
+}
