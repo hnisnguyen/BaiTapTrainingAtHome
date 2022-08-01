@@ -1,0 +1,226 @@
+/* Đơn vị 16px = 1em */
+
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS cho phần tag body */
+body {
+  /* set font */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* set background color */
+  background-color: aliceblue;
+
+  /* set padding (phần giữa nội dung và border của nó) */
+  padding-left: 50px;
+  padding-right: 50px;
+  /* min-height: 100vh; */
+  width: 80%;
+  margin: 5px auto;
+}
+
+/* CSS cho phần tag header */
+header {
+  /* set độ rộng của header */
+  width: 100%;
+
+  /* set các thành phần nằm ngang */
+  display: inline-block;
+
+  /* set margin (phần bên ngoài border của nó) */
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+/* CSS cho tag img trong tag header */
+header img {
+  /* để hình ảnh nằm giữa màn hình */
+  display: block;
+  margin: auto;
+
+  /* điều chỉnh size hình ảnh */
+  width: 160px;
+  height: 80px;
+
+  /* animation: myHeader 10s linear 0s infinite alternate; */
+}
+
+/* CSS cho tag p trong tag header */
+header p {
+  /* canh giữa chữ */
+  text-align: center;
+
+  /* set kiểu font */
+  font-style: italic;
+
+  /* set màu chữ */
+  color: grey;
+
+  /* kích cỡ chữ */
+  font-size: 16px;
+}
+
+/* CSS cho tag nav */
+nav {
+  /* set kiểu border */
+  border-top: 1.6px solid black;
+  border-bottom: 3.2px double black;
+  margin: 10px auto;
+  text-align: right;
+  /* width: 80%; */
+}
+
+/* CSS cho tag ul trong tag nav */
+nav > ul {
+  display: flex;
+  list-style: none;
+}
+
+/* CSS cho tag li trong tag ul trong tag nav */
+nav ul li {
+  text-transform: uppercase;
+  text-align: center;
+
+  /* Chia đều độ rộng khung li trong nav */
+  flex-grow: 1;
+}
+
+/* CSS cho tag a trong tag nav */
+nav a {
+  color: black;
+  font-weight: lighter;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* CSS cho tag a trong tag nav khi để chuột vào */
+nav a:hover {
+  color: white;
+  background-color: lightcoral;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 70% 5% 25%;
+  grid-template-rows: 100%;
+}
+/* CSS cho main */
+main {
+  min-height: calc(100vh - 250px);
+}
+
+.container > main {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.container > main > .title {
+  font-size: 25px;
+  color: brown;
+  border-bottom: none;
+}
+
+/* cho sidebar menu */
+.user_sidebar {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  border-left: 1px solid black;
+  padding: 0 20px;
+}
+
+.user_sidebar .sidebar_header {
+  background-color: rgb(255, 119, 119);
+  margin: 10px;
+}
+
+.sidebar_header h3 {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.user_sidebar .sidebar_content li {
+  font-size: 16px;
+  /* margin: 10px 0; */
+  padding: 10px 0;
+  border-bottom: 1px solid black;
+  list-style-type: none;
+}
+
+.sidebar_content a,
+.sidebar_content a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar_content .selected {
+  background-color: rgb(255, 255, 150);
+}
+
+.sidebar_content .selected a {
+  color: blue;
+  font-weight: bold;
+}
+
+.sidebar_content a:hover {
+  color: red;
+}
+
+/* CSS cho tag p trong tag footer */
+
+footer p {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+  padding: 16px;
+}
+
+/* add red color to footer heart icon */
+footer > p .icon {
+  color: red;
+}
+
+.title {
+  border-bottom: 2px dotted black;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: red;
+  font-size: 200%;
+  margin: 15px 0;
+}
+
+/*  */
+div.table {
+  display: inline;
+}
+
+table {
+  margin: 15px auto;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+th {
+  text-align: left;
+}
+
+table button a {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  font-size: 16px;
+}
