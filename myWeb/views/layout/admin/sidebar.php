@@ -25,6 +25,14 @@
                     <!--                    <li><a href="">Chỉnh sửa bài học</a></li>-->
                 </ul>
             </li>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 1) { ?>
+                <li>
+                    <h3>User</h3>
+                    <ul>
+                        <li><a href="../../admin/user/list.php">Danh sách người dùng</a></li>
+                    </ul>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 </div>

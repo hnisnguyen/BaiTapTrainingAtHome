@@ -51,7 +51,7 @@ include "../../db/myFunction.php";
 
                                 echo '<tr>';
                                 echo '<td>Bài ' . $number . ": " . $row['name_menu'] . '</td>';
-                                echo '<td><button>Xem</button></td>';
+                                echo '<td><button><a href="content.php?id_lesson=' . $row["id_menu"] . '">Xem</a></button></td>';
                                 echo '</tr>';
                                 $number += 1;
                             }

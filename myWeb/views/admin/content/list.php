@@ -43,7 +43,7 @@ $row_content = $data_content->fetch_assoc();
                         <i class="fas fa-plus"></i></a>
                 <?php } ?>
             </div>
-            <table>
+            <table class="content_list">
                 <thead>
                     <tr>
                         <th rowspan="2">Nội dung</th>
@@ -61,7 +61,7 @@ $row_content = $data_content->fetch_assoc();
                     $data_content = getContent($id);
                     while ($row = $data_content->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . substr($row['content'], 0, 999) . "<br/>(còn tiếp)</td>";
+                        echo "<td class='content'>" . substr($row['content'], 0, 2300) . "<br/>(còn tiếp)</td>";
                         echo "<td>" . $row['create_date'] . "</td>";
                         echo "<td>" . $row['update_date'] . "</td>";
 

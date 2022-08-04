@@ -25,11 +25,11 @@ if (isset($_GET['id_lesson'])) {
 <body>
     <header>
         <!-- thêm header vào file -->
-        <?php include_once "../layout/header.php" ?>
+        <?php include_once "../layout/user/header.php" ?>
     </header>
     <nav>
         <!-- thêm menu vào file -->
-        <?php include_once "../layout/navigation.php" ?>
+        <?php include_once "../layout/user/navigation.php" ?>
     </nav>
 
     <div class="container">
@@ -48,12 +48,12 @@ if (isset($_GET['id_lesson'])) {
             ?>
         </main>
 
-        <?php include "../layout/sidebar.php" ?>
+        <?php include "../layout/user/sidebar.php" ?>
     </div>
 
     <footer>
         <!-- thêm footer vào file -->
-        <?php include_once "../layout/footer.php" ?>
+        <?php include_once "../layout/user/footer.php" ?>
     </footer>
 </body>
 

@@ -1,4 +1,18 @@
 <?php
+// Initialize the session
+session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    require "isAdmin.php";
+} else {
+    // Unset all of the session variables
+    $_SESSION = array();
+
+    // Destroy the session.
+    session_destroy();
+}
+
 // Include config file
 require_once "../db/mydb.php";
 $connect = connectdb();
@@ -13,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate email address
     if (empty(trim($_POST["email"]))) {
         $email_err = "Vui lòng nhập địa chỉ mail.";
-    // } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+        // } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
     } elseif (!preg_match('/^([a-zA-Z0-9\.]+[@]+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/', trim($_POST["email"]))) {
         $email_err = "Địa chỉ mail không hợp lệ.";
     } else {

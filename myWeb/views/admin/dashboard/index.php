@@ -15,7 +15,7 @@
 <body>
     <?php include "../../layout/admin/sidebar.php" ?>
     <?php include "../../layout/admin/header.php"?>
-    <div class="container">
+    <div class="container"></div>
 </body>
 
 </html>

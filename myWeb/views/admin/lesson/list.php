@@ -1,5 +1,6 @@
 <!-- Dùng để xem danh sách -->
 <?php require "../../validLoggedIn.php" ?>
+
 <?php
 include "../../../db/myFunction.php";
 if (isset($_GET['table']) && isset($_GET['parent'])) {

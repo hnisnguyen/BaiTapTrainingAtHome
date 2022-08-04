@@ -28,6 +28,24 @@ html {
     color: #fff;
     text-align: center;
   }
+
+  .login-box h5 {
+    margin: 30px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .login-box h5 a {
+    text-decoration: none;
+    color: aqua;
+  }
+
+  .login-box h5 a:hover {
+    text-decoration: underline;
+    color: aquamarine;
+    font-size: 16px;
+  }
   
   .login-box .user-box {
     position: relative;
@@ -55,9 +73,13 @@ html {
     pointer-events: none;
     transition: .5s;
   }
+
+  .login-box .user-box input::placeholder {
+    color: transparent;
+  }
   
   .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .login-box .user-box input:not(:placeholder-shown) ~ label {
     top: -20px;
     left: 0;
     color: #03e9f4;
@@ -87,4 +109,11 @@ html {
     align-items: center;
     justify-items: center;
     color: white;
+  }
+
+  .error-message {
+    font-size: 14px;
+    padding: 0;
+    color: rgb(255, 102, 102);
+    text-align: left;
   }

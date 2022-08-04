@@ -7,29 +7,90 @@
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   background-color: aliceblue;
   min-height: 100vh;
   width: 100%;
   display: grid;
   grid-template-columns: 240px 20px calc(100% - 240px - 20px);
-  grid-template-rows: 100%;
+  grid-template-rows: 50px 20px calc(100% - 120px - 20px);
 }
 
 /* layout */
-.sidebar {
-  background-color: #4285f4;
-  color: #dadce0;
-  grid-column: 1 / 2;
+/* header-admin */
+.header-admin {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  background-color: #b3d3ea;
 }
 
-.sidebar-header {
+.header-admin .dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.header-admin .greeting {
+  font-size: 20px;
+  margin: 10px 15px;
+}
+
+.header-admin .admin-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #7aa7c7;
+  min-width: 150px;
+  z-index: 1;
+}
+
+.header-admin .admin-dropdown a {
+  padding: 12px 16px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.header-admin .admin-dropdown a:hover {
+  background-color: #a0c7e4;
+}
+
+.header-admin .dropdown-wrapper:hover .admin-dropdown {
+  display: block;
+}
+
+
+/* sidebar */
+.sidebar {
+  background-color: rgb(63, 136, 255);
+  color: #dadce0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  min-height: 100vh;
+  width: 240px;
+  position: fixed;
+}
+
+.sidebar-header .logo {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   place-items: center;
   height: 60px;
-  padding: 0 16px;
+  padding: 15px 15px;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo .logo_name {
+  color: rgb(61, 61, 61);
+  font-style: italic;
+  font-size: 16px;
 }
 
 .sidebar-menu {
@@ -54,17 +115,37 @@ body {
   color: #a0c7e4;
 }
 
-.container {
-  grid-column: 3 / 4;
+.sidebar-menu a:hover,
+.sidebar-menu a:focus,
+.sidebar-menu a:active {
+  color: white;
 }
 
-.container h3 {
-  font-size: 30px;
-  /* background-color: #224abe; */
+
+/* main */
+.container {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.head {
+  padding: 15px;
+  text-align: center;
+}
+
+.head h3 {
+  font-size: 25px;
   color: rgb(0, 48, 119);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+  margin: 10px;
+  
+}
+
+.head h3.menu-title {
+  font-size: 30px;
+  color: rgb(255, 124, 124);
+  text-align: left;
+  border-bottom: 1px solid rgb(255, 124, 124);
+  width: fit-content;
 }
 
 /* button 8 */
@@ -221,6 +302,38 @@ div.form-group textarea {
   padding: 10px 10px;
 }
 
+/* Nút select */
+select {
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid gray;
+  box-shadow: none;
+  color: #666;
+  padding: 10px 10px;
+  width: 200px;
+  -webkit-appearance: none;
+}
+.select-wrapper {
+  position: relative;
+  width: fit-content;
+}
+.select-wrapper:after {
+  content: "< >";
+  color: #666;
+  font-size: 16px;
+  top: 8px;
+  right: 0;
+  transform: rotate(90deg);
+  position: absolute;
+  z-index: -1;
+}
+
+.button-group {
+  margin-top: 30px;
+}
+
 /* Table */
 /* set list table vào giữa */
 div.table {
@@ -231,6 +344,7 @@ div.table {
 div.table table {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
 }
 
 table {
@@ -277,29 +391,18 @@ i.view-icon:focus {
   color: aqua;
 }
 
-/* Nút select */
-select {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  border-bottom: 1px solid gray;
-  box-shadow: none;
-  color: #666;
-  padding: 10px 10px;
-  width: 200px;
-  -webkit-appearance: none;
+.error {
+  color: red;
 }
-.select-wrapper {
-  position: relative;
-  width: 200px;
+
+.success {
+  color: #06d85f;
 }
-.select-wrapper:after {
-  content: "< >";
-  color: #666;
-  font-size: 16px;
-  top: 8px;
-  right: 0;
-  transform: rotate(90deg);
-  position: absolute;
-  z-index: -1;
+
+.reset-btn {
+  color: red !important;
+}
+
+.reset-btn:hover {
+  background-color: rgb(255, 182, 178);
 }

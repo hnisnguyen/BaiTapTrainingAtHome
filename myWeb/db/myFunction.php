@@ -97,3 +97,18 @@ function deleteContent($id, $table = 'content') {
     $sql = "UPDATE $table SET del_flag = 1 WHERE id_menu = '$id'";
     return checkQuery($sql);
 }
+
+function getAllUser ($table = 'users') {
+    $sql = "SELECT * FROM $table WHERE del_flg = 0";
+    return checkQuery($sql);
+}
+
+function getUser($id, $table = 'users') {
+    $sql = "SELECT * FROM $table WHERE id = '$id' AND del_flg = 0";
+    return checkQuery($sql);
+}
+
+function updateRole($id, $role, $table = 'users') {
+    $sql = "UPDATE $table SET role = $role WHERE id = '$id' AND del_flg = 0";
+    return checkQuery($sql);
+}

@@ -19,12 +19,12 @@ include "../../db/myFunction.php";
 <body>
     <header>
         <!-- thêm header vào file -->
-        <?php include_once "../layout/header.php" ?>
+        <?php include_once "../layout/user/header.php" ?>
     </header>
 
     <nav>
         <!-- thêm menu vào file -->
-        <?php include_once "../layout/navigation.php" ?>
+        <?php include_once "../layout/user/navigation.php" ?>
     </nav>
     <main>
         <?php if (isset($_GET['parent']) && isset($_GET['id'])) {
@@ -70,7 +70,7 @@ include "../../db/myFunction.php";
     </main>
     <footer>
         <!-- thêm footer vào file -->
-        <?php include_once "../layout/footer.php" ?>
+        <?php include_once "../layout/user/footer.php" ?>
     </footer>
 
 </body>
